@@ -163,7 +163,7 @@ const Sidebar = () => {
                             icon={<UserOutlined />}
                             title="User Profile"
                             style={{
-                                paddingLeft: '15px',
+                                paddingLeft: '25px',
                                 color: '#262626'
                             }}
                         >
@@ -183,7 +183,7 @@ const Sidebar = () => {
                                 Followers
                             </Menu.Item>
                         </Menu.SubMenu>
-                        <Menu.Item key="account" icon={<SolutionOutlined />} style={{
+                        {/* <Menu.Item key="account" icon={<SolutionOutlined />} style={{
                             paddingLeft: '24px',
                             color: '#262626',
                             height: '36px'
@@ -210,7 +210,47 @@ const Sidebar = () => {
                             height: '36px'
                         }}>
                             Social
-                        </Menu.Item>
+                        </Menu.Item> */}
+                        <Menu.SubMenu
+                            key="account"
+                            icon={<SolutionOutlined />}
+                            title="Account"
+                            style={{
+                                paddingLeft: '25px',
+                                color: '#262626'
+                            }}
+                        >
+                        </Menu.SubMenu>
+                        <Menu.SubMenu
+                            key="corporate"
+                            icon={<TeamOutlined />}
+                            title="Corporate"
+                            style={{
+                                paddingLeft: '25px',
+                                color: '#262626'
+                            }}
+                        >
+                        </Menu.SubMenu>
+                        <Menu.SubMenu
+                            key="blog"
+                            icon={<ContainerOutlined />}
+                            title="Blog"
+                            style={{
+                                paddingLeft: '25px',
+                                color: '#262626'
+                            }}
+                        >
+                        </Menu.SubMenu>
+                        <Menu.SubMenu
+                            key="social"
+                            icon={<WechatOutlined />}
+                            title="Social"
+                            style={{
+                                paddingLeft: '25px',
+                                color: '#262626'
+                            }}
+                        >
+                        </Menu.SubMenu>
                     </Menu.ItemGroup>
                 </Menu>
             </div>
