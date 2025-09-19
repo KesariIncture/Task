@@ -1,0 +1,64 @@
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover,
+.ant-menu-item-selected,
+.ant-menu-submenu-selected > .ant-menu-submenu-title {
+  background-color: #f0f0f0 !important;
+  color: #262626 !important;
+}
+
+.ant-menu-item:hover .anticon,
+.ant-menu-submenu-title:hover .anticon {
+  color: #262626 !important;
+}
+
+.ant-menu-submenu-arrow {
+  color: #262626 !important;
+}
+
+.ant-menu-submenu .ant-menu-item:hover {
+  background-color: #f0f0f0 !important;
+  color: #262626 !important;
+}
+
+.ant-menu-item-selected {
+  position: relative;
+}
+
+.ant-menu-item-selected::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background-color: #262626;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.ant-menu-submenu .ant-menu-item-selected::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background-color: #262626;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.ant-menu-submenu-selected > .ant-menu-submenu-title::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background-color: #262626;
+  border-radius: 2px;
+  z-index: 1;
+}
