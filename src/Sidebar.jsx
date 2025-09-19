@@ -133,7 +133,7 @@ const Sidebar = () => {
                             icon={<FolderOpenOutlined />}
                             title="Projects"
                             style={{
-                                paddingLeft: '15px',
+                                paddingLeft: '25px',
                                 color: '#262626'
                             }}
                         >
@@ -143,7 +143,7 @@ const Sidebar = () => {
                             icon={<BookOutlined />}
                             title="Projects"
                             style={{
-                                paddingLeft: '15px',
+                                paddingLeft: '25px',
                                 color: '#262626'
                             }}
                         >
