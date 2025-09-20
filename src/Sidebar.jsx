@@ -2,7 +2,6 @@ import React from 'react';
 import './Sidebar.css';
 import { Button, Layout, List, Menu, Typography } from 'antd';
 import {
-    BookOutlined,
     UserOutlined,
     ContainerOutlined,
     TeamOutlined,
@@ -11,7 +10,7 @@ import {
     ShoppingOutlined,
     FolderOpenOutlined,
     WechatOutlined,
-    FileTextOutlined
+    ReadOutlined
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -140,8 +139,8 @@ const Sidebar = () => {
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="courses"
-                            icon={<BookOutlined />}
-                            title="Projects"
+                            icon={<ReadOutlined />}
+                            title="Online Courses"
                             style={{
                                 paddingLeft: '25px',
                                 color: '#262626'
