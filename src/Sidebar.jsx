@@ -1,17 +1,6 @@
-import React from 'react';
+
 import './Sidebar.css';
 import { Button, Layout, List, Menu, Typography } from 'antd';
-import {
-    UserOutlined,
-    ContainerOutlined,
-    TeamOutlined,
-    SolutionOutlined,
-    PieChartOutlined,
-    ShoppingOutlined,
-    FolderOpenOutlined,
-    WechatOutlined,
-    ReadOutlined
-} from '@ant-design/icons';
 import { BookOpenIcon, ChartPieSliceIcon, ChatCircleIcon, ChatsCircleIcon, FolderIcon, IdentificationBadgeIcon, IdentificationCardIcon, NotebookIcon, NoteIcon, ShoppingBagOpenIcon, UsersThreeIcon } from "@phosphor-icons/react";
 
 const { Sider } = Layout;
@@ -31,15 +20,15 @@ const Sidebar = () => {
                     width: '32px',
                     height: '32px',
                     backgroundColor: '#1890ff',
-                    borderRadius: '6px',
+                    borderRadius: '50px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '12px'
                 }}>
-                    <UserOutlined style={{ color: 'white', fontSize: '16px' }} />
+                    {/* <UserOutlined style={{ color: 'white', fontSize: '16px' }} /> */}JUST
                 </div>
-                <span style={{ fontSize: '16px', fontWeight: '600', }}>ByeWind</span>
+                <span style={{ fontSize: '16px', fontWeight: '400', }}>ByeWind</span>
             </div>
 
             <div style={{ padding: '16px 0' }}>

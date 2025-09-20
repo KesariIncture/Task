@@ -1,16 +1,7 @@
-import React from "react";
+
 import { Layout, Breadcrumb, Input, Button, Space } from "antd";
-import {
-    SearchOutlined,
-    BulbOutlined,
-    UndoOutlined,
-    BellOutlined,
-    AppstoreOutlined,
-    ProfileOutlined,
-    StarFilled,
-    SunOutlined,
-    HistoryOutlined,
-} from "@ant-design/icons";
+
+import { BellIcon, ClockCounterClockwiseIcon, MagnifyingGlassIcon, SidebarIcon, StarIcon, SunIcon } from "@phosphor-icons/react";
 
 const { Header } = Layout;
 
@@ -30,7 +21,7 @@ const HeaderComp = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
                 <Button
                     type="text"
-                    icon={<ProfileOutlined />}
+                    icon={<SidebarIcon size={20} weight="duotone" />}
                     style={{
                         marginRight: "16px",
                         fontSize: "16px",
@@ -38,7 +29,7 @@ const HeaderComp = () => {
                 />
                 <Button
                     type="text"
-                    icon={<StarFilled />}
+                    icon={<StarIcon size={20} weight="duotone" />}
                     style={{
                         marginRight: "10px",
                         fontSize: "16px",
@@ -57,7 +48,7 @@ const HeaderComp = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
                 <Input
                     placeholder="Search"
-                    prefix={<SearchOutlined style={{ color: "##f3f3f3" }} />}
+                    prefix={<MagnifyingGlassIcon size={20} color="" />}
                     suffix={
                         <span
                             style={{
@@ -80,28 +71,28 @@ const HeaderComp = () => {
                 <Space size="small">
                     <Button
                         type="text"
-                        icon={<SunOutlined />}
+                        icon={<SunIcon size={20} weight="duotone" />}
                         style={{
                             fontSize: "16px",
                         }}
                     />
                     <Button
                         type="text"
-                        icon={<HistoryOutlined />}
+                        icon={<ClockCounterClockwiseIcon size={20} weight="duotone" />}
                         style={{
                             fontSize: "16px",
                         }}
                     />
                     <Button
                         type="text"
-                        icon={<BellOutlined />}
+                        icon={<BellIcon size={20} weight="duotone" />}
                         style={{
                             fontSize: "16px",
                         }}
                     />
                     <Button
                         type="text"
-                        icon={<ProfileOutlined />}
+                        icon={<SidebarIcon size={20} weight="duotone" />}
                         style={{
                             fontSize: "16px",
                         }}
