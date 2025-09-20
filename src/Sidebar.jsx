@@ -153,7 +153,7 @@ const Sidebar = () => {
 
 
                     <Menu.ItemGroup key="pages" title={<Text style={{
-                        fontSize: '12px',
+                        fontSize: '14px',
                         letterSpacing: '0.5px',
                         color: 'gray',
                         paddingLeft: '24px'
