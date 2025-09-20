@@ -12,6 +12,7 @@ import {
     WechatOutlined,
     ReadOutlined
 } from '@ant-design/icons';
+import { BookOpenIcon, ChartPieSliceIcon, ChatCircleIcon, ChatsCircleIcon, FolderIcon, IdentificationBadgeIcon, IdentificationCardIcon, NotebookIcon, NoteIcon, ShoppingBagOpenIcon, UsersThreeIcon } from "@phosphor-icons/react";
 
 const { Sider } = Layout;
 const { Text } = Typography;
@@ -38,13 +39,13 @@ const Sidebar = () => {
                 }}>
                     <UserOutlined style={{ color: 'white', fontSize: '16px' }} />
                 </div>
-                <span style={{ fontSize: '16px', fontWeight: '600', color: '#262626' }}>ByeWind</span>
+                <span style={{ fontSize: '16px', fontWeight: '600', }}>ByeWind</span>
             </div>
 
             <div style={{ padding: '16px 0' }}>
                 <div style={{ display: 'flex', paddingLeft: '24px', marginBottom: '8px' }}>
                     <Button style={{
-                        fontSize: '12px',
+                        fontSize: '14px',
                         letterSpacing: '0.5px',
                         color: 'gray'
 
@@ -52,7 +53,7 @@ const Sidebar = () => {
                         Favorites
                     </Button>
                     <Button style={{
-                        fontSize: '12px',
+                        fontSize: '14px',
 
                         color: 'lightgrey'
                     }} type="text">
@@ -63,8 +64,8 @@ const Sidebar = () => {
 
                 <div>
                     <ul style={{ listStyleType: 'disc', color: 'lightgray' }}>
-                        <li style={{ marginBottom: '15px', marginLeft: '15px' }}><span style={{ color: '#262626' }}>Overview</span></li>
-                        <li style={{ marginBottom: '15px', marginLeft: '15px' }}><span style={{ color: '#262626' }}>Projects</span></li>
+                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{}}>Overview</span></li>
+                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{}}>Projects</span></li>
                     </ul>
                 </div>
 
@@ -77,73 +78,73 @@ const Sidebar = () => {
                     }}
                 >
                     <Menu.ItemGroup key="dashboards" title={<Text style={{
-                        fontSize: '12px',
+                        fontSize: '14px',
                         letterSpacing: '0.5px',
                         color: 'gray',
                         paddingLeft: '24px'
                     }}>Dashboards</Text>}>
                         {/* <Menu.Item key="default" icon={<PieChartOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Default
                         </Menu.Item>
                         <Menu.Item key="ecommerce" icon={<ShoppingOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             eCommerce
                         </Menu.Item>
                         <Menu.Item key="projects" icon={<FolderOpenOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Projects
                         </Menu.Item>
                         <Menu.Item key="courses" icon={<BookOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Online Courses
                         </Menu.Item> */}
-                        <Menu.Item key="default" icon={<PieChartOutlined />} style={{
+                        <Menu.Item key="default" icon={< ChartPieSliceIcon size={'20'} weight='duotone' />} style={{
                             paddingLeft: '50px',
-                            color: '#262626',
+
                             height: '36px'
                         }}>
                             Default
                         </Menu.Item>
                         <Menu.SubMenu
                             key="ecommerce"
-                            icon={<ShoppingOutlined />}
+                            icon={< ShoppingBagOpenIcon size={'20'} />}
                             title="eCommerce"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="projects"
-                            icon={<FolderOpenOutlined />}
+                            icon={<FolderIcon size={20} />}
                             title="Projects"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="courses"
-                            icon={<ReadOutlined />}
+                            icon={<BookOpenIcon size={20} weight='duotone' />}
                             title="Online Courses"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
@@ -159,101 +160,101 @@ const Sidebar = () => {
                     }}>Pages</Text>}>
                         <Menu.SubMenu
                             key="user-profile"
-                            icon={<UserOutlined />}
+                            icon={<IdentificationBadgeIcon size={20} weight='duotone' />}
                             title="User Profile"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
-                            <Menu.Item key="profile-overview" style={{ paddingLeft: '48px', height: '36px', color: '#262626' }}>
+                            <Menu.Item key="profile-overview" style={{ paddingLeft: '48px', height: '36px', }}>
                                 Overview
                             </Menu.Item>
-                            <Menu.Item key="profile-projects" style={{ paddingLeft: '48px', height: '36px', color: '#262626' }}>
+                            <Menu.Item key="profile-projects" style={{ paddingLeft: '48px', height: '36px', }}>
                                 Projects
                             </Menu.Item>
-                            <Menu.Item key="profile-campaigns" style={{ paddingLeft: '48px', height: '36px', color: '#262626' }}>
+                            <Menu.Item key="profile-campaigns" style={{ paddingLeft: '48px', height: '36px', }}>
                                 Campaigns
                             </Menu.Item>
-                            <Menu.Item key="profile-documents" style={{ paddingLeft: '48px', height: '36px', color: '#262626' }}>
+                            <Menu.Item key="profile-documents" style={{ paddingLeft: '48px', height: '36px', }}>
                                 Documents
                             </Menu.Item>
-                            <Menu.Item key="profile-followers" style={{ paddingLeft: '48px', height: '36px', color: '#262626' }}>
+                            <Menu.Item key="profile-followers" style={{ paddingLeft: '48px', height: '36px', }}>
                                 Followers
                             </Menu.Item>
                         </Menu.SubMenu>
                         {/* <Menu.Item key="account" icon={<SolutionOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Account
                         </Menu.Item>
                         <Menu.Item key="corporate" icon={<TeamOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Corporate
                         </Menu.Item>
                         <Menu.Item key="blog" icon={<ContainerOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Blog
                         </Menu.Item>
                         <Menu.Item key="social" icon={<WechatOutlined />} style={{
                             paddingLeft: '24px',
-                            color: '#262626',
+                            ,
                             height: '36px'
                         }}>
                             Social
                         </Menu.Item> */}
                         <Menu.SubMenu
                             key="account"
-                            icon={<SolutionOutlined />}
+                            icon={<IdentificationCardIcon size={20} weight='duotone' />}
                             title="Account"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="corporate"
-                            icon={<TeamOutlined />}
+                            icon={<UsersThreeIcon size={20} weight='duotone' />}
                             title="Corporate"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="blog"
-                            icon={<ContainerOutlined />}
+                            icon={<NotebookIcon size={20} weight='duotone' />}
                             title="Blog"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                         <Menu.SubMenu
                             key="social"
-                            icon={<WechatOutlined />}
+                            icon={<ChatsCircleIcon size={20} weight='duotone' />}
                             title="Social"
                             style={{
                                 paddingLeft: '25px',
-                                color: '#262626'
+
                             }}
                         >
                         </Menu.SubMenu>
                     </Menu.ItemGroup>
                 </Menu>
             </div>
-        </Sider>
+        </Sider >
     );
 };
 
