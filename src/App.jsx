@@ -4,17 +4,15 @@ import Sidebar from "./Sidebar";
 import HeaderComp from "./HeaderComp";
 import MainContent from "./MainContent";
 
-const { Content } = Layout;
-
 const App = () => {
   return (
     <Layout>
       <Sidebar />
       <Layout>
         <HeaderComp />
-        <Content>
+        <Layout>
           <MainContent />
-        </Content>
+        </Layout>
       </Layout>
     </Layout>
   );
