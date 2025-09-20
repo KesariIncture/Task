@@ -1,4 +1,4 @@
-
+import byeWind from './assets/ByeWind.png'
 import './Sidebar.css';
 import { Button, Layout, List, Menu, Typography } from 'antd';
 import { BookOpenIcon, ChartPieSliceIcon, ChatCircleIcon, ChatsCircleIcon, FolderIcon, IdentificationBadgeIcon, IdentificationCardIcon, NotebookIcon, NoteIcon, ShoppingBagOpenIcon, UsersThreeIcon } from "@phosphor-icons/react";
@@ -16,18 +16,17 @@ const Sidebar = () => {
                 paddingLeft: '24px',
                 borderBottom: '1px solid #f0f0f0'
             }}>
-                <div style={{
-                    width: '32px',
-                    height: '32px',
-                    backgroundColor: '#1890ff',
+
+                <img src={byeWind} alt="ByeWind" style={{
+                    width: '25px',
+                    height: '25px',
                     borderRadius: '50px',
                     display: 'flex',
                     alignItems: 'center',
+                    marginRight: '12px',
                     justifyContent: 'center',
-                    marginRight: '12px'
-                }}>
-                    {/* <UserOutlined style={{ color: 'white', fontSize: '16px' }} /> */}JUST
-                </div>
+                }} />
+
                 <span style={{ fontSize: '16px', fontWeight: '400', }}>ByeWind</span>
             </div>
 
