@@ -12,7 +12,7 @@ const MainContent = () => {
             minHeight: '100%',
             padding: '24px'
         }}>
-            <Text>eCommerce</Text>
+            <Text style={{ fontSize: '14px', fontWeight: '600', }}>eCommerce</Text>
         </div>
     )
 }

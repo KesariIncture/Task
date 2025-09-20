@@ -9,12 +9,11 @@ const { Text } = Typography;
 const Sidebar = () => {
     return (
         <Sider width={250} style={{ background: '#fff', height: '100vh', borderRight: '1px solid #f0f0f0' }}>
-            <Text style={{
+            <div style={{
                 height: '64px',
                 display: 'flex',
                 alignItems: 'center',
                 paddingLeft: '24px',
-                borderBottom: '1px solid #f0f0f0'
             }}>
 
                 <img src={byeWind} alt="ByeWind" style={{
@@ -28,7 +27,7 @@ const Sidebar = () => {
                 }} />
 
                 <Text style={{ fontSize: '16px', fontWeight: '400', }}>ByeWind</Text>
-            </Text>
+            </div>
 
             <div style={{ padding: '16px 0' }}>
                 <div style={{ display: 'flex', paddingLeft: '24px', marginBottom: '8px' }}>
