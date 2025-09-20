@@ -1,4 +1,3 @@
-
 import { Layout } from "antd";
 import Sidebar from "./Sidebar";
 import HeaderComp from "./HeaderComp";
@@ -12,15 +11,8 @@ const App = () => {
       <Sidebar />
       <Layout>
         <HeaderComp />
-        <Content
-          style={{
-            background: "white",
-            padding: "24px",
-            overflow: "auto",
-          }}
-        >
-          <MainContent />
-        </Content>
+
+        <MainContent />
       </Layout>
     </Layout>
   );
