@@ -9,7 +9,7 @@ const { Text } = Typography;
 const Sidebar = () => {
     return (
         <Sider width={250} style={{ background: '#fff', height: '100vh', borderRight: '1px solid #f0f0f0' }}>
-            <div style={{
+            <Text style={{
                 height: '64px',
                 display: 'flex',
                 alignItems: 'center',
@@ -27,8 +27,8 @@ const Sidebar = () => {
                     justifyContent: 'center',
                 }} />
 
-                <span style={{ fontSize: '16px', fontWeight: '400', }}>ByeWind</span>
-            </div>
+                <Text style={{ fontSize: '16px', fontWeight: '400', }}>ByeWind</Text>
+            </Text>
 
             <div style={{ padding: '16px 0' }}>
                 <div style={{ display: 'flex', paddingLeft: '24px', marginBottom: '8px' }}>
