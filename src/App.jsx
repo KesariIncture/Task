@@ -8,7 +8,7 @@ const { Content } = Layout;
 
 const App = () => {
   return (
-    <Layout style={{ height: "100vh" }}>
+    <Layout>
       <Sidebar />
       <Layout>
         <HeaderComp />
