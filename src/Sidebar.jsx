@@ -64,8 +64,8 @@ const Sidebar = () => {
 
                 <div>
                     <ul style={{ listStyleType: 'disc', color: 'lightgray' }}>
-                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{}}>Overview</span></li>
-                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{}}>Projects</span></li>
+                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{ color: 'black' }}>Overview</span></li>
+                        <li style={{ marginBottom: '15px', marginLeft: '15px', fontSize: '14px', }}><span style={{ color: 'black' }}>Projects</span></li>
                     </ul>
                 </div>
 
