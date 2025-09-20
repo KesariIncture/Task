@@ -22,13 +22,13 @@ const Sidebar = () => {
       width={250}
       style={{
         background: "#fff",
-        height: "100vh",
+        height: "100%",
         borderRight: "2px solid #E9E9E9",
       }}
     >
       <div
         style={{
-          height: "55px",
+          height: "64px",
           display: "flex",
           alignItems: "center",
           paddingLeft: "24px",
