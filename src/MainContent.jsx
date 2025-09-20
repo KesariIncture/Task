@@ -1,148 +1,34 @@
 import { TrendUpIcon } from "@phosphor-icons/react";
-import { Card, Typography, Row, Col } from "antd";
+import { Col, Row, Typography } from "antd";
 import React from "react";
+import ProjectionsChart from "./ProjectionsChart";
+import StatsCards from "./StatsCards";
+import RevenueChart from "./RevenueChart";
 
 const MainContent = () => {
   const { Text } = Typography;
 
   return (
-    <div
-      style={{
-        background: "white",
-        minHeight: "100%",
-        padding: "24px",
-      }}
-    >
-      <Text style={{ fontSize: "14px", fontWeight: "600" }}>eCommerce</Text>
-
-      <div style={{ marginTop: "24px", maxWidth: "400px" }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-            <Card
-              size="small"
-              style={{
-                width: "100%",
-                maxWidth: 200,
-                backgroundColor: "#E4F5FF",
-                padding: "10px",
-                borderRadius: "20px",
-              }}
-            >
-              <Text style={{ fontSize: "14px", fontWeight: "600" }}>
-                Customers
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontSize: "25px", fontWeight: "600" }}>
-                  3,781
-                </Text>
-                <Text>
-                  +11.01 <TrendUpIcon />
-                </Text>
-              </div>
-            </Card>
+    <>
+      <div style={{ minHeight: "100%", backgroundColor: "white" }}>
+        <Row style={{ padding: "20px" }}>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+            <StatsCards />
           </Col>
-
-          <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-            <Card
-              size="small"
-              style={{
-                width: "100%",
-                maxWidth: 200,
-                backgroundColor: "#f7f9f5",
-                padding: "10px",
-                borderRadius: "20px",
-              }}
-            >
-              <Text style={{ fontSize: "14px", fontWeight: "600" }}>
-                Orders
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontSize: "25px", fontWeight: "600" }}>
-                  1,219
-                </Text>
-                <Text>
-                  -0.03 <TrendUpIcon />
-                </Text>
-              </div>
-            </Card>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+            <ProjectionsChart />
           </Col>
-
-          <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-            <Card
-              size="small"
-              style={{
-                width: "100%",
-                maxWidth: 200,
-                backgroundColor: "#f7f9f5",
-                padding: "10px",
-                borderRadius: "20px",
-              }}
-            >
-              <Text style={{ fontSize: "14px", fontWeight: "600" }}>
-                Revenue
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontSize: "25px", fontWeight: "600" }}>
-                  $695
-                </Text>
-                <Text>
-                  +15.03 <TrendUpIcon />
-                </Text>
-              </div>
-            </Card>
+        </Row>
+        <Row style={{ padding: "20px" }}>
+          <Col xs={24} sm={24} md={24} lg={16} xl={16}>
+            <RevenueChart />
           </Col>
-
-          <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-            <Card
-              size="small"
-              style={{
-                width: "100%",
-                maxWidth: 200,
-                backgroundColor: "#E5ECF6",
-                padding: "10px",
-                borderRadius: "20px",
-              }}
-            >
-              <Text style={{ fontSize: "14px", fontWeight: "600" }}>
-                Growth
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontSize: "25px", fontWeight: "600" }}>
-                  30.1%
-                </Text>
-                <Text>
-                  +6.08 <TrendUpIcon />
-                </Text>
-              </div>
-            </Card>
+          <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+            <ProjectionsChart />
           </Col>
         </Row>
       </div>
-    </div>
+    </>
   );
 };
 

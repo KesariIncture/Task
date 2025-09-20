@@ -21,8 +21,8 @@ const Sidebar = () => {
     <Sider
       width={250}
       style={{
-        background: "#fff",
-        height: "100vh",
+        background: "white",
+        height: "120vh",
         borderRight: "2px solid #E9E9E9",
       }}
     >
