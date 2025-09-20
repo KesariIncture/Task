@@ -28,7 +28,7 @@ const Sidebar = () => {
     >
       <div
         style={{
-          height: "64px",
+          height: "55px",
           display: "flex",
           alignItems: "center",
           paddingLeft: "24px",

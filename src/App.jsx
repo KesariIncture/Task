@@ -1,3 +1,4 @@
+import React from "react";
 import { Layout } from "antd";
 import Sidebar from "./Sidebar";
 import HeaderComp from "./HeaderComp";
@@ -11,8 +12,9 @@ const App = () => {
       <Sidebar />
       <Layout>
         <HeaderComp />
-
-        <MainContent />
+        <Content>
+          <MainContent />
+        </Content>
       </Layout>
     </Layout>
   );
