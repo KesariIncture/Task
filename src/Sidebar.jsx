@@ -8,7 +8,7 @@ const { Text } = Typography;
 
 const Sidebar = () => {
     return (
-        <Sider width={250} style={{ background: '#fff', height: '100vh', borderRight: '1px solid #f0f0f0' }}>
+        <Sider width={250} style={{ background: '#fff', height: '100vh', borderRight: '2px solid #E9E9E9' }}>
             <div style={{
                 height: '64px',
                 display: 'flex',

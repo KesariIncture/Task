@@ -11,7 +11,7 @@ const HeaderComp = () => {
             style={{
                 background: "#fff",
                 padding: "0 24px",
-                borderBottom: "1px solid #f0f0f0",
+                borderBottom: "2px solid #E9E9E9",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
@@ -48,7 +48,7 @@ const HeaderComp = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
                 <Input
                     placeholder="Search"
-                    prefix={<MagnifyingGlassIcon size={20} color="" />}
+                    prefix={<MagnifyingGlassIcon size={20} color="#c8c8c8" />}
                     suffix={
                         <span
                             style={{
