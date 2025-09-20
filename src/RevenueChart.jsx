@@ -49,6 +49,7 @@ const RevenueChart = ({ width = "100%", height = 400 }) => {
           display: "flex",
           alignItems: "center",
           gap: "24px",
+          marginLeft: "70px",
         }}
       >
         <div
