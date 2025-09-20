@@ -31,12 +31,8 @@ const RevenueChart = ({ width = "100%", height = 400 }) => {
           backgroundColor: color,
         }}
       />
-      <span style={{ fontSize: "14px", color: "#666", fontWeight: "500" }}>
-        {label}
-      </span>
-      <span style={{ fontSize: "14px", color: "#333", fontWeight: "600" }}>
-        {value}
-      </span>
+      <span style={{ fontSize: "14px" }}>{label}</span>
+      <span style={{ fontSize: "14px" }}>{value}</span>
     </div>
   );
 
@@ -45,25 +41,28 @@ const RevenueChart = ({ width = "100%", height = 400 }) => {
       style={{
         backgroundColor: "#f7f9fb",
         borderRadius: "12px",
-        padding: "20px",
         height: height,
       }}
     >
-      <div style={{ marginBottom: "24px" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "24px",
+        }}
+      >
         <div
           style={{
-            fontSize: "14x",
+            fontSize: "14px",
             fontWeight: "600",
             color: "#333",
-            marginBottom: "16px",
           }}
         >
           Revenue
         </div>
-        <div style={{ display: "flex", gap: "24px" }}>
-          <Legend color="#333" label="Current Week" value="$58,211" />
-          <Legend color="#a8c5da" label="Previous Week" value="$68,768" />
-        </div>
+        <div style={{ color: "lightgrey" }}>|</div>
+        <Legend color="#333" label="Current Week" value="$58,211" />
+        <Legend color="#a8c5da" label="Previous Week" value="$68,768" />
       </div>
 
       <ResponsiveContainer width={width} height={height - 120}>

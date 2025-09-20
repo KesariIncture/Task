@@ -19,11 +19,10 @@ const ProjectionsChart = ({ width = "70%", height = 300 }) => {
         height: height,
       }}
     >
-      <div style={{ marginBottom: "16px" }}>
-        <div style={{ fontSize: "16px", fontWeight: "600", color: "#333" }}>
-          Projections vs Actuals
-        </div>
+      <div style={{ fontSize: "14px", fontWeight: "600", color: "#333" }}>
+        Projections vs Actuals
       </div>
+
       <ResponsiveContainer width={width} height={height - 60}>
         <BarChart
           data={chartData}

@@ -4,6 +4,7 @@ import React from "react";
 import ProjectionsChart from "./ProjectionsChart";
 import StatsCards from "./StatsCards";
 import RevenueChart from "./RevenueChart";
+import Map from "./Map";
 
 const MainContent = () => {
   const { Text } = Typography;
@@ -24,7 +25,7 @@ const MainContent = () => {
             <RevenueChart />
           </Col>
           <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-            <ProjectionsChart />
+            <Map />
           </Col>
         </Row>
       </div>
