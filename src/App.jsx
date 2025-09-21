@@ -18,7 +18,6 @@ const App = () => {
             style={{
               marginRight: "325px",
               minHeight: "calc(100vh - 64px)",
-              backgroundColor: "white",
             }}
           >
             <MainContent />

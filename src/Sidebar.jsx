@@ -24,7 +24,7 @@ const Sidebar = () => {
       width={250}
       style={{
         background: "white",
-        height: "200vh",
+        height: "220vh",
         borderRight: "2px solid #E9E9E9",
       }}
     >
