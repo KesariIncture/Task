@@ -2,7 +2,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
 import { Typography } from "antd";
 
-const ProjectionsChart = ({ width = "90%", height = 300 }) => {
+const ProjectionsChart = ({ width = "100%", height = 300 }) => {
   const chartData = [
     { month: "Jan", bottom: 18, top: 2 },
     { month: "Feb", bottom: 22, top: 3 },

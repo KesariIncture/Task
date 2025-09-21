@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
+import "./RevenueChart.css";
 
 const RevenueChart = ({ width = "100%", height = 500 }) => {
   const chartData = [
@@ -44,14 +45,7 @@ const RevenueChart = ({ width = "100%", height = 500 }) => {
         height: height,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "24px",
-          marginLeft: "70px",
-        }}
-      >
+      <div className="chart-header">
         <div
           style={{
             fontSize: "14px",
