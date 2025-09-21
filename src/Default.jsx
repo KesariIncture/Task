@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Button, Input, Avatar, Tag, Checkbox, Pagination } from "antd";
+import { Table, Button, Input, Avatar, Pagination, Checkbox } from "antd";
 import {
   PlusOutlined,
   FilterOutlined,
@@ -14,6 +14,7 @@ const { Search } = Input;
 
 const Default = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState(["#CM9804"]);
+  const [searchText, setSearchText] = useState(""); // State for search input
 
   const data = [
     {
@@ -183,6 +184,17 @@ const Default = () => {
         return 0;
     }
   };
+
+  // Filter data based on search text
+  const filteredData = data.filter((item) =>
+    [
+      item.orderId,
+      item.user.name,
+      item.project,
+      item.address,
+      item.status,
+    ].some((field) => field.toLowerCase().includes(searchText.toLowerCase()))
+  );
 
   const columns = [
     {
@@ -354,16 +366,18 @@ const Default = () => {
             <Button icon={<SortAscendingOutlined />} size="small" />
           </div>
           <Search
-            placeholder="Search"
+            placeholder="Search orders"
             style={{ width: 200 }}
             prefix={<SearchOutlined />}
+            onChange={(e) => setSearchText(e.target.value)} // Update search text on input change
+            value={searchText}
           />
         </div>
 
         {/* Table */}
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={filteredData} // Use filtered data
           pagination={false}
           rowSelection={{
             type: "checkbox",
@@ -392,7 +406,7 @@ const Default = () => {
         >
           <Pagination
             current={1}
-            total={50}
+            total={filteredData.length} // Update total based on filtered data
             pageSize={10}
             showSizeChanger={false}
             simple={false}
