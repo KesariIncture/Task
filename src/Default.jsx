@@ -407,7 +407,7 @@ const Default = () => {
           <Pagination
             current={1}
             total={filteredData.length} // Update total based on filtered data
-            pageSize={10}
+            pageSize={2}
             showSizeChanger={false}
             simple={false}
           />
