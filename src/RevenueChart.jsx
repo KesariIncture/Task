@@ -1,7 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
 
-const RevenueChart = ({ width = "90%", height = 500 }) => {
+const RevenueChart = ({ width = "100%", height = 500 }) => {
   const chartData = [
     { month: "Jan", currentWeek: 12, previousWeek: 8, currentWeekDashed: null },
     { month: "Feb", currentWeek: 9, previousWeek: 16, currentWeekDashed: null },
@@ -66,7 +66,15 @@ const RevenueChart = ({ width = "90%", height = 500 }) => {
         <Legend color="#a8c5da" label="Previous Week" value="$68,768" />
       </div>
 
-      <ResponsiveContainer width={width} height={height - 120}>
+      <ResponsiveContainer
+        width={width}
+        height={height - 120}
+        style={{
+          "@media (min-width: 425px)": {
+            width: "600px",
+          },
+        }}
+      >
         <LineChart
           data={chartData}
           margin={{ top: 20, right: 30, left: 60, bottom: 40 }}
@@ -97,6 +105,7 @@ const RevenueChart = ({ width = "90%", height = 500 }) => {
             dot={false}
             activeDot={{ r: 4, fill: "#a8c5da" }}
             connectNulls={false}
+            filter="drop-shadow(0 5px 5px rgba(168, 197, 218, 0.7))"
           />
 
           <Line

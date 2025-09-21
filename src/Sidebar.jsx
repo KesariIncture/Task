@@ -19,7 +19,7 @@ const { Text } = Typography;
 const Sidebar = () => {
   return (
     <Sider
-      width={250}
+      width={0}
       style={{
         background: "white",
         height: "200vh",
