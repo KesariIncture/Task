@@ -31,6 +31,7 @@ const App = () => {
               borderLeft: "1px solid #f0f0f0",
               backgroundColor: "white",
               overflow: "auto",
+              zIndex: -1
             }}
           >
             <NotificationPanel />
