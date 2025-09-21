@@ -56,6 +56,7 @@ const RevenueChart = ({ width = "90%", height = 500 }) => {
           style={{
             fontSize: "14px",
             fontWeight: "600",
+            padding: "24px",
           }}
         >
           Revenue

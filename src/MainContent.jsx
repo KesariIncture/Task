@@ -5,6 +5,7 @@ import ProjectionsChart from "./ProjectionsChart";
 import StatsCards from "./StatsCards";
 import RevenueChart from "./RevenueChart";
 import Map from "./Map";
+import ProductsTable from "./ProductsTable";
 
 const MainContent = () => {
   const { Text } = Typography;
@@ -23,6 +24,14 @@ const MainContent = () => {
         <Row style={{ padding: "20px" }}>
           <Col xs={24} sm={24} md={24} lg={16} xl={16}>
             <RevenueChart />
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+            <Map />
+          </Col>
+        </Row>
+        <Row style={{ padding: "20px" }}>
+          <Col xs={24} sm={24} md={24} lg={16} xl={16}>
+            <ProductsTable />
           </Col>
           <Col xs={24} sm={24} md={24} lg={8} xl={8}>
             <Map />
