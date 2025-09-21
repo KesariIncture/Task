@@ -1,6 +1,8 @@
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import byeWind from "./assets/ByeWind.png";
 import "./Sidebar.css";
-import { Button, Layout, List, Menu, Typography } from "antd";
+import { Button, Layout, Menu, Typography } from "antd";
 import {
   BookOpenIcon,
   ChartPieSliceIcon,
@@ -17,6 +19,17 @@ const { Sider } = Layout;
 const { Text } = Typography;
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedKeys, setSelectedKeys] = useState(
+    location.pathname === "/" ? [] : [location.pathname]
+  );
+
+  const handleMenuClick = (e) => {
+    setSelectedKeys([e.key]);
+    navigate(e.key);
+  };
+
   return (
     <Sider
       breakpoint="lg"
@@ -49,7 +62,6 @@ const Sidebar = () => {
             justifyContent: "center",
           }}
         />
-
         <Text style={{ fontSize: "16px", fontWeight: "400" }}>ByeWind</Text>
       </div>
 
@@ -70,7 +82,6 @@ const Sidebar = () => {
           <Button
             style={{
               fontSize: "14px",
-
               color: "lightgrey",
             }}
             type="text"
@@ -104,6 +115,8 @@ const Sidebar = () => {
 
         <Menu
           mode="inline"
+          selectedKeys={selectedKeys}
+          onClick={handleMenuClick}
           style={{
             borderRight: 0,
             fontSize: "14px",
@@ -126,11 +139,10 @@ const Sidebar = () => {
             }
           >
             <Menu.Item
-              key="default"
+              key="/default"
               icon={<ChartPieSliceIcon size={"20"} weight="duotone" />}
               style={{
                 paddingLeft: "50px",
-
                 height: "36px",
               }}
             >
@@ -186,31 +198,31 @@ const Sidebar = () => {
               }}
             >
               <Menu.Item
-                key="profile-overview"
+                key="/profile/overview"
                 style={{ paddingLeft: "48px", height: "36px" }}
               >
                 Overview
               </Menu.Item>
               <Menu.Item
-                key="profile-projects"
+                key="/profile/projects"
                 style={{ paddingLeft: "48px", height: "36px" }}
               >
                 Projects
               </Menu.Item>
               <Menu.Item
-                key="profile-campaigns"
+                key="/profile/campaigns"
                 style={{ paddingLeft: "48px", height: "36px" }}
               >
                 Campaigns
               </Menu.Item>
               <Menu.Item
-                key="profile-documents"
+                key="/profile/documents"
                 style={{ paddingLeft: "48px", height: "36px" }}
               >
                 Documents
               </Menu.Item>
               <Menu.Item
-                key="profile-followers"
+                key="/profile/followers"
                 style={{ paddingLeft: "48px", height: "36px" }}
               >
                 Followers
