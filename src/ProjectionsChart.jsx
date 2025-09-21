@@ -32,7 +32,7 @@ const ProjectionsChart = ({ width = "70%", height = 300 }) => {
         >
           <XAxis
             dataKey="month"
-            axisLine={false}
+            axisLine={{ stroke: "#e0e0e0", strokeWidth: 1 }}
             tickLine={false}
             tick={{ fontSize: 12, fill: "#666" }}
           />
