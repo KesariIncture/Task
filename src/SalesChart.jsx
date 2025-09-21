@@ -48,6 +48,7 @@ const SalesChart = () => {
       style={{
         backgroundColor: "#f7f9fb",
         maxWidth: "280px",
+        marginTop: 20,
       }}
     >
       <Typography

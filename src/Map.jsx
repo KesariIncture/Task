@@ -10,7 +10,13 @@ const Map = () => {
   ];
 
   return (
-    <Card style={{ maxWidth: "280px", backgroundColor: "#f7f9fb" }}>
+    <Card
+      style={{
+        maxWidth: "280px",
+        backgroundColor: "#f7f9fb",
+        marginTop: 20,
+      }}
+    >
       <Typography
         style={{
           fontSize: "14px",
