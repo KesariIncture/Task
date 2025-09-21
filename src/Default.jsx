@@ -1,5 +1,15 @@
-import React, { useState } from "react";
-import { Table, Button, Input, Avatar, Pagination, Checkbox } from "antd";
+import React, { useState, useEffect } from "react";
+import {
+  Table,
+  Button,
+  Input,
+  Avatar,
+  Pagination,
+  Checkbox,
+  Spin,
+  Drawer,
+  Tag,
+} from "antd";
 import {
   PlusOutlined,
   FilterOutlined,
@@ -8,13 +18,38 @@ import {
   MoreOutlined,
   CalendarOutlined,
   LinkOutlined,
+  UserOutlined,
+  ProjectOutlined,
+  HomeOutlined,
 } from "@ant-design/icons";
 
 const { Search } = Input;
 
 const Default = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState(["#CM9804"]);
-  const [searchText, setSearchText] = useState(""); // State for search input
+  const [searchText, setSearchText] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size and set mobile state
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Simulate data loading with a 2-second delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const data = [
     {
@@ -185,7 +220,6 @@ const Default = () => {
     }
   };
 
-  // Filter data based on search text
   const filteredData = data.filter((item) =>
     [
       item.orderId,
@@ -196,6 +230,131 @@ const Default = () => {
     ].some((field) => field.toLowerCase().includes(searchText.toLowerCase()))
   );
 
+  // Mobile card view component
+  const MobileCard = ({ record }) => (
+    <div
+      className="mobile-card"
+      style={{
+        border: "1px solid #f0f0f0",
+        borderRadius: "8px",
+        padding: "16px",
+        marginBottom: "12px",
+        backgroundColor: selectedRowKeys.includes(record.key)
+          ? "#f6ffed"
+          : "white",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          marginBottom: "12px",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Checkbox
+            checked={selectedRowKeys.includes(record.key)}
+            onChange={(e) => {
+              if (e.target.checked) {
+                setSelectedRowKeys([...selectedRowKeys, record.key]);
+              } else {
+                setSelectedRowKeys(
+                  selectedRowKeys.filter((key) => key !== record.key)
+                );
+              }
+            }}
+          />
+          <span style={{ fontWeight: 600, fontSize: "16px", color: "#262626" }}>
+            {record.orderId}
+          </span>
+        </div>
+        <Button
+          type="text"
+          icon={<MoreOutlined />}
+          style={{ color: "#8c8c8c" }}
+        />
+      </div>
+
+      <div style={{ marginBottom: "12px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            marginBottom: "8px",
+          }}
+        >
+          <UserOutlined style={{ color: "#8c8c8c", fontSize: "14px" }} />
+          <Avatar src={record.user.avatar} size={24} />
+          <span style={{ fontWeight: 500, color: "#262626" }}>
+            {record.user.name}
+          </span>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            marginBottom: "8px",
+          }}
+        >
+          <ProjectOutlined style={{ color: "#8c8c8c", fontSize: "14px" }} />
+          <span style={{ color: "#262626" }}>{record.project}</span>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            marginBottom: "8px",
+          }}
+        >
+          <HomeOutlined style={{ color: "#8c8c8c", fontSize: "14px" }} />
+          <span style={{ color: "#262626" }}>{record.address}</span>
+          {record.hasLink && (
+            <LinkOutlined style={{ color: "#8c8c8c", fontSize: "12px" }} />
+          )}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            marginBottom: "8px",
+          }}
+        >
+          <CalendarOutlined style={{ color: "#8c8c8c", fontSize: "14px" }} />
+          <span style={{ color: "#262626" }}>{record.date}</span>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        <div
+          style={{
+            width: "8px",
+            height: "8px",
+            borderRadius: "50%",
+            backgroundColor: getStatusColor(record.status),
+          }}
+        />
+        <span
+          style={{
+            color: getStatusColor(record.status),
+            fontSize: "14px",
+            fontWeight: 500,
+          }}
+        >
+          {record.status}
+        </span>
+      </div>
+    </div>
+  );
+
+  // Desktop table columns
   const columns = [
     {
       title: "",
@@ -243,6 +402,7 @@ const Default = () => {
       key: "project",
       sorter: (a, b) => a.project.localeCompare(b.project),
       render: (text) => <span style={{ color: "#262626" }}>{text}</span>,
+      responsive: ["md"],
     },
     {
       title: "Address",
@@ -257,6 +417,7 @@ const Default = () => {
           )}
         </div>
       ),
+      responsive: ["lg"],
     },
     {
       title: "Date",
@@ -269,6 +430,7 @@ const Default = () => {
           <span style={{ color: "#262626" }}>{text}</span>
         </div>
       ),
+      responsive: ["sm"],
     },
     {
       title: "Status",
@@ -316,103 +478,130 @@ const Default = () => {
   return (
     <div
       style={{
-        padding: "24px",
+        padding: isMobile ? "12px" : "24px",
         backgroundColor: "white",
         height: "100%",
+        minHeight: "100vh",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: "8px",
-          overflow: "hidden",
-        }}
-      >
-        {/* Header */}
+      <Spin spinning={loading} tip="Loading orders..." size="large">
         <div
           style={{
-            padding: "20px 24px",
-            borderBottom: "1px solid #f0f0f0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            backgroundColor: "white",
+            borderRadius: "8px",
+            overflow: "hidden",
+            boxShadow: isMobile ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
           }}
         >
-          <h2
+          {/* Header */}
+          <div
             style={{
-              margin: 0,
-              fontSize: "20px",
-              fontWeight: 600,
-              color: "#262626",
+              padding: isMobile ? "16px" : "20px 24px",
+              borderBottom: "1px solid #f0f0f0",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Order List
-          </h2>
-        </div>
-
-        {/* Toolbar */}
-        <div
-          style={{
-            padding: "16px 24px",
-            borderBottom: "1px solid #f0f0f0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ display: "flex", gap: "8px" }}>
-            <Button icon={<PlusOutlined />} size="small" />
-            <Button icon={<FilterOutlined />} size="small" />
-            <Button icon={<SortAscendingOutlined />} size="small" />
+            <h2
+              style={{
+                margin: 0,
+                fontSize: isMobile ? "18px" : "20px",
+                fontWeight: 600,
+                color: "#262626",
+              }}
+            >
+              Order List
+            </h2>
           </div>
-          <Search
-            placeholder="Search orders"
-            style={{ width: 200 }}
-            prefix={<SearchOutlined />}
-            onChange={(e) => setSearchText(e.target.value)} // Update search text on input change
-            value={searchText}
-          />
-        </div>
 
-        {/* Table */}
-        <Table
-          columns={columns}
-          dataSource={filteredData} // Use filtered data
-          pagination={false}
-          rowSelection={{
-            type: "checkbox",
-            selectedRowKeys,
-            onChange: setSelectedRowKeys,
-            renderCell: () => null,
-          }}
-          rowClassName={(record) =>
-            selectedRowKeys.includes(record.key) ? "selected-row" : ""
-          }
-          style={{
-            "& .selected-row": {
-              backgroundColor: "#f6ffed",
-            },
-          }}
-        />
+          {/* Toolbar */}
+          <div
+            style={{
+              padding: isMobile ? "12px 16px" : "16px 24px",
+              borderBottom: "1px solid #f0f0f0",
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              gap: isMobile ? "12px" : "0",
+              justifyContent: "space-between",
+              alignItems: isMobile ? "stretch" : "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                gap: "8px",
+                justifyContent: isMobile ? "center" : "flex-start",
+              }}
+            >
+              <Button icon={<PlusOutlined />} size="small" disabled={loading} />
+              <Button
+                icon={<FilterOutlined />}
+                size="small"
+                disabled={loading}
+              />
+              <Button
+                icon={<SortAscendingOutlined />}
+                size="small"
+                disabled={loading}
+              />
+            </div>
+            <Search
+              placeholder="Search orders"
+              style={{ width: isMobile ? "100%" : 200 }}
+              prefix={<SearchOutlined />}
+              onChange={(e) => setSearchText(e.target.value)}
+              value={searchText}
+              disabled={loading}
+            />
+          </div>
 
-        {/* Pagination */}
-        <div
-          style={{
-            padding: "16px 24px",
-            borderTop: "1px solid #f0f0f0",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Pagination
-            current={1}
-            total={filteredData.length} // Update total based on filtered data
-            pageSize={2}
-            showSizeChanger={false}
-            simple={false}
-          />
+          {/* Content - Table or Mobile Cards */}
+          {isMobile ? (
+            <div style={{ padding: "16px" }}>
+              {filteredData.map((record) => (
+                <MobileCard key={record.key} record={record} />
+              ))}
+            </div>
+          ) : (
+            <Table
+              columns={columns}
+              dataSource={filteredData}
+              pagination={false}
+              rowSelection={{
+                type: "checkbox",
+                selectedRowKeys,
+                onChange: setSelectedRowKeys,
+                renderCell: () => null,
+              }}
+              rowClassName={(record) =>
+                selectedRowKeys.includes(record.key) ? "selected-row" : ""
+              }
+              scroll={{ x: 800 }}
+            />
+          )}
+
+          {/* Pagination */}
+          <div
+            style={{
+              padding: isMobile ? "12px 16px" : "16px 24px",
+              borderTop: "1px solid #f0f0f0",
+              display: "flex",
+              justifyContent: isMobile ? "center" : "flex-end",
+            }}
+          >
+            <Pagination
+              current={1}
+              total={filteredData.length}
+              pageSize={2}
+              showSizeChanger={false}
+              simple={isMobile}
+              disabled={loading}
+              size={isMobile ? "small" : "default"}
+            />
+          </div>
         </div>
-      </div>
+      </Spin>
 
       <style jsx>{`
         .ant-table-tbody > tr.selected-row > td {
@@ -420,6 +609,24 @@ const Default = () => {
         }
         .ant-table-tbody > tr.selected-row:hover > td {
           background-color: white !important;
+        }
+
+        @media (max-width: 768px) {
+          .ant-table-wrapper {
+            overflow-x: auto;
+          }
+          .mobile-card {
+            transition: all 0.2s ease;
+          }
+          .mobile-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .ant-btn {
+            min-width: 32px;
+          }
         }
       `}</style>
     </div>
