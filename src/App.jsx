@@ -24,13 +24,10 @@ const App = () => {
           <Layout style={{ position: "relative" }}>
             <Content>
               <Routes>
-                {/* Main Content as the start page */}
                 <Route path="/" element={<MainContent />} />
 
-                {/* Dashboard routes */}
                 <Route path="/default" element={<Default />} />
 
-                {/* eCommerce routes */}
                 <Route
                   path="/ecommerce/dashboard"
                   element={
@@ -46,7 +43,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Orders Page</div>}
                 />
 
-                {/* Projects routes */}
                 <Route
                   path="/projects/overview"
                   element={<div style={{ padding: 24 }}>Projects Overview</div>}
@@ -56,7 +52,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Project List</div>}
                 />
 
-                {/* Courses routes */}
                 <Route
                   path="/courses/dashboard"
                   element={<div style={{ padding: 24 }}>Courses Dashboard</div>}
@@ -66,7 +61,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Course List</div>}
                 />
 
-                {/* Profile routes */}
                 <Route
                   path="/profile/overview"
                   element={<div style={{ padding: 24 }}>Profile Overview</div>}
@@ -88,7 +82,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Profile Followers</div>}
                 />
 
-                {/* Account routes */}
                 <Route
                   path="/account/settings"
                   element={<div style={{ padding: 24 }}>Account Settings</div>}
@@ -98,7 +91,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Account Billing</div>}
                 />
 
-                {/* Corporate routes */}
                 <Route
                   path="/corporate/team"
                   element={<div style={{ padding: 24 }}>Corporate Team</div>}
@@ -108,7 +100,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Corporate Company</div>}
                 />
 
-                {/* Blog routes */}
                 <Route
                   path="/blog/posts"
                   element={<div style={{ padding: 24 }}>Blog Posts</div>}
@@ -118,7 +109,6 @@ const App = () => {
                   element={<div style={{ padding: 24 }}>Blog Categories</div>}
                 />
 
-                {/* Social routes */}
                 <Route
                   path="/social/feed"
                   element={<div style={{ padding: 24 }}>Social Feed</div>}
