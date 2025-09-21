@@ -493,7 +493,6 @@ const Default = () => {
             boxShadow: isMobile ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
           }}
         >
-          {/* Header */}
           <div
             style={{
               padding: isMobile ? "16px" : "20px 24px",
@@ -515,7 +514,6 @@ const Default = () => {
             </h2>
           </div>
 
-          {/* Toolbar */}
           <div
             style={{
               padding: isMobile ? "12px 16px" : "16px 24px",
@@ -556,7 +554,6 @@ const Default = () => {
             />
           </div>
 
-          {/* Content - Table or Mobile Cards */}
           {isMobile ? (
             <div style={{ padding: "16px" }}>
               {filteredData.map((record) => (
@@ -581,7 +578,6 @@ const Default = () => {
             />
           )}
 
-          {/* Pagination */}
           <div
             style={{
               padding: isMobile ? "12px 16px" : "16px 24px",
