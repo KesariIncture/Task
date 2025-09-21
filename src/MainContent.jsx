@@ -6,6 +6,7 @@ import StatsCards from "./StatsCards";
 import RevenueChart from "./RevenueChart";
 import Map from "./Map";
 import ProductsTable from "./ProductsTable";
+import SalesChart from "./SalesChart";
 
 const MainContent = () => {
   const { Text } = Typography;
@@ -34,7 +35,7 @@ const MainContent = () => {
             <ProductsTable />
           </Col>
           <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-            <Map />
+            <SalesChart />
           </Col>
         </Row>
       </div>

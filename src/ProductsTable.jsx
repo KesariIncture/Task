@@ -6,25 +6,25 @@ const ProductsTable = () => {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      render: (text) => <span style={{ color: "#666" }}>{text}</span>,
+      render: (text) => <span>{text}</span>,
     },
     {
       title: "Price",
       dataIndex: "price",
       key: "price",
-      render: (text) => <span style={{ color: "#666" }}>{text}</span>,
+      render: (text) => <span>{text}</span>,
     },
     {
       title: "Quantity",
       dataIndex: "quantity",
       key: "quantity",
-      render: (text) => <span style={{ color: "#666" }}>{text}</span>,
+      render: (text) => <span>{text}</span>,
     },
     {
       title: "Amount",
       dataIndex: "amount",
       key: "amount",
-      render: (text) => <span style={{ color: "#666" }}>{text}</span>,
+      render: (text) => <span>{text}</span>,
     },
   ];
 
@@ -80,7 +80,7 @@ const ProductsTable = () => {
           fontWeight: "600",
         }}
       >
-        Revenue
+        Top Selling Products
       </Typography>
       <Table
         columns={columns}
@@ -88,6 +88,21 @@ const ProductsTable = () => {
         pagination={false}
         showHeader={true}
         size="middle"
+        className="custom-table"
+        components={{
+          header: {
+            cell: (props) => (
+              <th
+                {...props}
+                style={{
+                  ...props.style,
+                  color: "#9fa0a2",
+                  fontWeight: 100,
+                }}
+              />
+            ),
+          },
+        }}
       />
     </div>
   );

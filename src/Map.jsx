@@ -10,7 +10,7 @@ const Map = () => {
   ];
 
   return (
-    <Card style={{ maxWidth: "400px", backgroundColor: "#f7f9fb" }}>
+    <Card style={{ maxWidth: "280px", backgroundColor: "#f7f9fb" }}>
       <Typography
         style={{
           fontSize: "14px",
@@ -20,7 +20,7 @@ const Map = () => {
       >
         Revenue by locations
       </Typography>
-      <img src={map} alt="Map" width={300} style={{ marginTop: "10px" }}></img>
+      <img src={map} alt="Map" width={250} style={{ marginTop: "10px" }}></img>
       {locations.map((loc) => (
         <div key={loc.name}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
