@@ -19,9 +19,12 @@ const { Text } = Typography;
 const Sidebar = () => {
   return (
     <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
       width={250}
       style={{
         background: "white",
+        height: "200vh",
         borderRight: "2px solid #E9E9E9",
       }}
     >
