@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
 import "./RevenueChart.css";
 
-const RevenueChart = ({ width = "100%", height = 500 }) => {
+const RevenueChart = ({ width = "90%", height = 500 }) => {
   const chartData = [
     { month: "Jan", currentWeek: 12, previousWeek: 8, currentWeekDashed: null },
     { month: "Feb", currentWeek: 9, previousWeek: 16, currentWeekDashed: null },
