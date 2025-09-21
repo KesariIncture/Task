@@ -15,25 +15,26 @@ const App = () => {
         <HeaderComp />
         <Layout style={{ position: "relative" }}>
           <Content
-            style={{
-              marginRight: "325px",
-              minHeight: "calc(100vh - 64px)",
-            }}
+          // style={{
+          //   marginRight: "325px",
+          //   minHeight: "calc(100vh - 64px)",
+          // }}
           >
             <MainContent />
           </Content>
 
-          <Layout
+          {/* <Layout
             style={{
               position: "absolute",
               right: 0,
               width: "325px",
               borderLeft: "1px solid #f0f0f0",
+              backgroundColor: "white",
               overflow: "auto",
             }}
           >
             <NotificationPanel />
-          </Layout>
+          </Layout> */}
         </Layout>
       </Layout>
     </Layout>

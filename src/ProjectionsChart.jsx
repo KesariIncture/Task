@@ -18,6 +18,7 @@ const ProjectionsChart = ({ width = "100%", height = 300 }) => {
         backgroundColor: "#f7f9fb",
         padding: "20px",
         height: height,
+        marginTop: 10,
       }}
     >
       <Typography style={{ fontSize: "14px", fontWeight: "600" }}>
