@@ -22,20 +22,10 @@ const RevenueChart = ({ width = "100%", height = 500 }) => {
     },
   ];
 
-  const Legend = ({ color, label, value }) => (
-    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-      <div
-        style={{
-          width: "8px",
-          height: "8px",
-          borderRadius: "50%",
-          backgroundColor: color,
-        }}
-      />
-      <span style={{ fontSize: "14px" }}>{label}</span>
-      <span style={{ fontSize: "14px" }}>{value}</span>
-    </div>
-  );
+  const legendItems = [
+    { color: "#333", label: "Current Week", value: "$58,211" },
+    { color: "#a8c5da", label: "Previous Week", value: "$68,768" },
+  ];
 
   return (
     <div
@@ -56,8 +46,30 @@ const RevenueChart = ({ width = "100%", height = 500 }) => {
           Revenue
         </div>
         <div style={{ color: "lightgrey" }}>|</div>
-        <Legend color="#333" label="Current Week" value="$58,211" />
-        <Legend color="#a8c5da" label="Previous Week" value="$68,768" />
+
+        <ul
+          style={{
+            listStyleType: "disc",
+            display: "flex",
+            gap: "20px",
+            margin: 0,
+            paddingLeft: "20px",
+          }}
+        >
+          {legendItems.map((item, index) => (
+            <li
+              key={index}
+              style={{
+                color: item.color,
+                fontSize: "14px",
+              }}
+            >
+              <span style={{ color: "black" }}>
+                {item.label} {item.value}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <ResponsiveContainer
