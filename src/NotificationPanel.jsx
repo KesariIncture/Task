@@ -1,6 +1,6 @@
-import React from "react";
 import { Avatar, List, Typography, Space } from "antd";
-import { BugOutlined, UserOutlined, WifiOutlined } from "@ant-design/icons";
+import { BroadcastIcon, BugBeetleIcon, UserIcon } from "@phosphor-icons/react";
+import byeWind from "./assets/ByeWind.png";
 
 const { Text, Title } = Typography;
 
@@ -8,28 +8,28 @@ const NotificationPanel = () => {
   const notifications = [
     {
       id: 1,
-      icon: <BugOutlined style={{ color: "#52c41a", fontSize: "16px" }} />,
+      icon: <BugBeetleIcon style={{ fontSize: "14px" }} />,
       title: "You have a bug that needs...",
       time: "Just now",
       type: "notification",
     },
     {
       id: 2,
-      icon: <UserOutlined style={{ color: "#1890ff", fontSize: "16px" }} />,
+      icon: <UserIcon style={{ fontSize: "14px" }} />,
       title: "New user registered",
       time: "59 minutes ago",
       type: "notification",
     },
     {
       id: 3,
-      icon: <BugOutlined style={{ color: "#52c41a", fontSize: "16px" }} />,
+      icon: <BugBeetleIcon style={{ fontSize: "14px" }} />,
       title: "You have a bug that needs...",
       time: "12 hours ago",
       type: "notification",
     },
     {
       id: 4,
-      icon: <WifiOutlined style={{ color: "#722ed1", fontSize: "16px" }} />,
+      icon: <BroadcastIcon style={{ fontSize: "14px" }} />,
       title: "Andi Lane subscribed to you",
       time: "Today, 11:59 AM",
       type: "notification",
@@ -39,31 +39,31 @@ const NotificationPanel = () => {
   const activities = [
     {
       id: 1,
-      avatar: "https://via.placeholder.com/32x32/52c41a/ffffff?text=B",
+      avatar: byeWind,
       title: "You have a bug that needs...",
       time: "Just now",
     },
     {
       id: 2,
-      avatar: "https://via.placeholder.com/32x32/fa541c/ffffff?text=R",
+      avatar: byeWind,
       title: "Released a new version",
       time: "59 minutes ago",
     },
     {
       id: 3,
-      avatar: "https://via.placeholder.com/32x32/1890ff/ffffff?text=S",
+      avatar: byeWind,
       title: "Submitted a bug",
       time: "12 hours ago",
     },
     {
       id: 4,
-      avatar: "https://via.placeholder.com/32x32/722ed1/ffffff?text=M",
+      avatar: byeWind,
       title: "Modified A data in Page X",
       time: "Today, 11:59 AM",
     },
     {
       id: 5,
-      avatar: "https://via.placeholder.com/32x32/f5222d/ffffff?text=D",
+      avatar: byeWind,
       title: "Deleted a page in Project X",
       time: "Feb 2, 2023",
     },
@@ -72,22 +72,22 @@ const NotificationPanel = () => {
   const contacts = [
     {
       id: 1,
-      avatar: "https://via.placeholder.com/32x32/8c8c8c/ffffff?text=N",
+      avatar: byeWind,
       name: "Natali Craig",
     },
     {
       id: 2,
-      avatar: "https://via.placeholder.com/32x32/f5222d/ffffff?text=D",
+      avatar: byeWind,
       name: "Drew Cano",
     },
     {
       id: 3,
-      avatar: "https://via.placeholder.com/32x32/fa8c16/ffffff?text=O",
+      avatar: byeWind,
       name: "Orlando Diggs",
     },
     {
       id: 4,
-      avatar: "https://via.placeholder.com/32x32/a0845c/ffffff?text=A",
+      avatar: byeWind,
       name: "Andi Lane",
     },
   ];
@@ -98,10 +98,10 @@ const NotificationPanel = () => {
         avatar={
           <div
             style={{
-              width: 24,
-              height: 24,
+              width: "25px",
+              height: "25px",
               borderRadius: "50%",
-              backgroundColor: "#f0f0f0",
+              backgroundColor: "#e3f5ff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -147,9 +147,7 @@ const NotificationPanel = () => {
       <List.Item.Meta
         avatar={<Avatar size={32} src={item.avatar} />}
         title={
-          <Text style={{ fontSize: "14px", color: "#262626", fontWeight: 400 }}>
-            {item.name}
-          </Text>
+          <Text style={{ fontSize: "14px", fontWeight: 400 }}>{item.name}</Text>
         }
       />
     </List.Item>
@@ -165,7 +163,6 @@ const NotificationPanel = () => {
         overflow: "hidden",
       }}
     >
-      {/* Notifications Section */}
       <div style={{ padding: "16px" }}>
         <List
           dataSource={notifications}
@@ -174,14 +171,12 @@ const NotificationPanel = () => {
         />
       </div>
 
-      {/* Activities Section */}
       <div style={{ padding: "0 16px 16px 16px" }}>
         <Title
           level={5}
           style={{
-            fontSize: "16px",
+            fontSize: "14px",
             fontWeight: 600,
-            color: "#262626",
             marginBottom: "16px",
             marginTop: "8px",
           }}
@@ -195,14 +190,12 @@ const NotificationPanel = () => {
         />
       </div>
 
-      {/* Contacts Section */}
       <div style={{ padding: "0 16px 16px 16px" }}>
         <Title
           level={5}
           style={{
-            fontSize: "16px",
+            fontSize: "14px",
             fontWeight: 600,
-            color: "#262626",
             marginBottom: "16px",
             marginTop: "8px",
           }}
