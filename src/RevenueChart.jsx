@@ -1,7 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
 
-const RevenueChart = ({ width = "100%", height = 500 }) => {
+const RevenueChart = ({ width = "100%", height = 600 }) => {
   const chartData = [
     { month: "Jan", currentWeek: 12, previousWeek: 8, currentWeekDashed: null },
     { month: "Feb", currentWeek: 9, previousWeek: 16, currentWeekDashed: null },
@@ -104,7 +104,7 @@ const RevenueChart = ({ width = "100%", height = 500 }) => {
             stroke="#333"
             strokeWidth={3}
             dot={false}
-            activeDot={{ r: 4, fill: "#333" }}
+            activeDot={{ r: 4, fill: "black" }}
             connectNulls={false}
           />
 
@@ -115,7 +115,7 @@ const RevenueChart = ({ width = "100%", height = 500 }) => {
             strokeWidth={3}
             strokeDasharray="5 5"
             dot={false}
-            activeDot={{ r: 4, fill: "#333" }}
+            activeDot={{ r: 4, fill: "black" }}
             connectNulls={true}
           />
         </LineChart>

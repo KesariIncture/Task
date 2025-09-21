@@ -1,5 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
+import { Typography } from "antd";
 
 const ProjectionsChart = ({ width = "70%", height = 300 }) => {
   const chartData = [
@@ -19,9 +20,9 @@ const ProjectionsChart = ({ width = "70%", height = 300 }) => {
         height: height,
       }}
     >
-      <div style={{ fontSize: "14px", fontWeight: "600", color: "#333" }}>
+      <Typography style={{ fontSize: "14px", fontWeight: "600" }}>
         Projections vs Actuals
-      </div>
+      </Typography>
 
       <ResponsiveContainer width={width} height={height - 60}>
         <BarChart
