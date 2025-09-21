@@ -34,7 +34,15 @@ const StatsCards = () => {
 
   return (
     <div style={{ marginTop: "24px", maxWidth: "400px" }}>
-      <Row gutter={[16, 16]}>
+      <Typography
+        style={{
+          fontSize: "14px",
+          fontWeight: 600,
+        }}
+      >
+        eCommerce
+      </Typography>
+      <Row gutter={[16, 16]} style={{ marginTop: 10 }}>
         {cardData.map((card, index) => (
           <Col xs={24} sm={12} md={12} lg={12} xl={12} key={index}>
             <Card
