@@ -12,7 +12,14 @@
 }
 
 .ant-menu-submenu-arrow {
-  color: #262626 !important;
+  color: lightgray !important;
+  right: auto !important;
+  left: 8px !important;
+  margin-left: 0 !important;
+}
+
+.ant-menu-submenu-title {
+  padding-left: 32px !important;
 }
 
 .ant-menu-submenu .ant-menu-item:hover {
@@ -61,4 +68,9 @@
   background-color: #262626;
   border-radius: 2px;
   z-index: 1;
+}
+
+/* Adjust icon positioning when arrow is on left */
+.ant-menu-submenu-title .anticon {
+  margin-left: 16px !important;
 }
