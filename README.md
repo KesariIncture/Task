@@ -51,7 +51,7 @@ A modern, responsive dashboard application built with React and Ant Design, feat
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:3000` (or the port shown in your terminal)
+   Navigate to `http://localhost:5173` (or the port shown in your terminal)
 
 ## 🎯 Usage
 
